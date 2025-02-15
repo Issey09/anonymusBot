@@ -49,9 +49,7 @@ async def peresil(message: Message):
     args = user_args.get(user_id)
     await message.answer(text="⚡⚡  Сообщение отправлено!")
 
-    await bot.send_message(chat_id=getUser(args), text=f"😁 Тебе пришло сообщение!\n \n"
-                                                       f"{message.text}\n\n"
-                                                       f"---------------------------")
+
     await bot.send_message(CHAT_ID, text=f"Текст от @{message.from_user.username}: {message.text}")
 
 
