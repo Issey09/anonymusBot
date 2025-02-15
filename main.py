@@ -43,15 +43,6 @@ async def main(message: Message):
         await message.reply("Привет! Хочешь создать ссылку?", reply_markup=keyboard)
 
 
-@dp.message(~Command(commands=['*']))
-async def peresil(message: Message):
-    user_id = message.from_user.id
-    args = user_args.get(user_id)
-    await message.answer(text="⚡⚡  Сообщение отправлено!")
-
-    await bot.send_message(CHAT_ID, text=f"Текст от @{message.from_user.username}: {message.text}")
-
-
 
 async def main():
     await bot.delete_webhook(drop_pending_updates=True)
